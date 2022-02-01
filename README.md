@@ -10,7 +10,11 @@ https://user-images.githubusercontent.com/81064834/151925878-55956660-689c-41ff-
 
 Add animation_page_transition dependency into the pubspec.yaml file
 
-then import 'package:animated_page_transition/animated_page_transition.dart'; into the implementation file/s.
+then import package into the implementation file/s.
+
+```dart
+import 'package:animated_page_transition/animated_page_transition.dart';
+```
 
 You can implement animated page transition very easily. 
 
@@ -52,18 +56,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
 Then wrap the scaffold of the second screen with [PageTransitionReceiver] widget where you want to navigate it as given below:
 
 ```dart
-class SecondScreen extends StatefulWidget {
+class SecondScreen extends StatelessWidget {
   const SecondScreen({Key? key}) : super(key: key);
 
   @override
-  _SecondScreenState createState() => _SecondScreenState();
-}
-
-class _SecondScreenState extends State<SecondScreen> {
-  @override
   Widget build(BuildContext context) {
-    return const PageTransitionReceiver(
-      scaffold: Scaffold(
+    return PageTransitionReceiver(
+      scaffold: const Scaffold(
         backgroundColor: Color(0xFFFF9735),
       ),
     );
