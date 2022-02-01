@@ -1,39 +1,76 @@
-<!-- 
-This README describes the package. If you publish this package to pub.dev,
-this README's contents appear on the landing page for your package.
+# Animated page transition
 
-For information about how to write a good package README, see the guide for
-[writing package pages](https://dart.dev/guides/libraries/writing-package-pages). 
+This package for page transition animation. With this package you can give have smooth page transitions in your apps. chack out the video given below!!!
 
-For general information about developing packages, see the Dart guide for
-[creating packages](https://dart.dev/guides/libraries/create-library-packages)
-and the Flutter guide for
-[developing packages and plugins](https://flutter.dev/developing-packages). 
--->
 
-TODO: Put a short description of the package here that helps potential users
-know whether this package might be useful for them.
+https://user-images.githubusercontent.com/81064834/151925878-55956660-689c-41ff-a6f8-acc0627c4e2a.mp4
 
-## Features
-
-TODO: List what your package can do. Maybe include images, gifs, or videos.
-
-## Getting started
-
-TODO: List prerequisites and provide or point to information on how to
-start using the package.
 
 ## Usage
 
-<!-- TODO: Include short and useful examples for package users. Add longer examples -->
-<!-- to `/example` folder.  -->
+Add animation_page_transition dependency into the pubspec.yaml file
+
+then import 'package:animated_page_transition/animated_page_transition.dart'; into the implementation file/s.
+
+You can implement animated page transition very easily. 
+
+First of all wrap your button with [PageTransitionButton] widget, example code is given below:
+
+To use [PageTransitionButton] you have to add [TickerProviderStateMixin] into your widget.
 
 ```dart
-const like = 'sample';
+class HomeScreen extends StatefulWidget {
+  const HomeScreen({Key? key}) : super(key: key);
+
+  @override
+  _HomeScreenState createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      body: Center(
+        child: PageTransitionButton(
+          vsync: this,
+          child: Container(
+            height: 120,
+            width: 120,
+            decoration: BoxDecoration(
+              color: const Color(0xFFFF9735),
+              borderRadius: BorderRadius.circular(10),
+            ),
+          ),
+          nextPage: const SecondScreen(),
+        ),
+      ),
+    );
+  }
+}
 ```
 
-## Additional information
+Then wrap the scaffold of the second screen with [PageTransitionReceiver] widget where you want to navigate it as given below:
 
-TODO: Tell users more about the package: where to find more information, how to 
-contribute to the package, how to file issues, what response they can expect 
-from the package authors, and more.
+```dart
+class SecondScreen extends StatefulWidget {
+  const SecondScreen({Key? key}) : super(key: key);
+
+  @override
+  _SecondScreenState createState() => _SecondScreenState();
+}
+
+class _SecondScreenState extends State<SecondScreen> {
+  @override
+  Widget build(BuildContext context) {
+    return const PageTransitionReceiver(
+      scaffold: Scaffold(
+        backgroundColor: Color(0xFFFF9735),
+      ),
+    );
+  }
+}
+```
+
+And now you are ready to go!!!
+
+Have fun and happy coding ;)
