@@ -47,18 +47,13 @@ class _HomeScreenState extends State<HomeScreen> with TickerProviderStateMixin {
   }
 }
 
-class SecondScreen extends StatefulWidget {
+class SecondScreen extends StatelessWidget {
   const SecondScreen({Key? key}) : super(key: key);
 
   @override
-  _SecondScreenState createState() => _SecondScreenState();
-}
-
-class _SecondScreenState extends State<SecondScreen> {
-  @override
   Widget build(BuildContext context) {
-    return const PageTransitionReceiver(
-      scaffold: Scaffold(
+    return PageTransitionReceiver(
+      scaffold: const Scaffold(
         backgroundColor: Color(0xFFFF9735),
       ),
     );
