@@ -1,6 +1,6 @@
 name: animated_page_transition
-description: This package is for animated page transitioning.
-version: 0.0.1+1
+description: This package is for animated page transitioning. This is easy to use package. Add animation_page_transition dependency into the pubspec.yaml file. Then, then import package into the implementation file/s and you can implement animated page transition very easily.
+version: 0.0.1+2
 homepage: https://github.com/typecasted/animated_page_transition
 
 environment:
