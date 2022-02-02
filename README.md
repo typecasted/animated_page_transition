@@ -3,7 +3,7 @@
 This package for page transition animation. With this package you can give have smooth page transitions in your apps. chack out the video given below!!!
 
 
-https://user-images.githubusercontent.com/81064834/151925878-55956660-689c-41ff-a6f8-acc0627c4e2a.mp4
+![VID_20220201122805](https://user-images.githubusercontent.com/81064834/152094077-cf4bef50-cbe4-4925-bcde-eb4acd0587d6.gif)
 
 
 ## Usage
